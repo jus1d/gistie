@@ -1,5 +1,5 @@
 # Ignore binary files
-./.bin/
+.bin/*
 
 # Ignore IDE files, folders
-./.idea
+.idea
