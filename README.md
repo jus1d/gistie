@@ -1,4 +1,5 @@
-# gistie - Simple tool for fast creation of Gists.
+# Gistie
+Simple tool for fast creation of Gists.
 
 ## Usage
 ```console
