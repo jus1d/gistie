@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"gistie/src/internal/file"
 	"os"
+	"strings"
 )
 
 const (
@@ -36,9 +37,5 @@ func GetToken() string {
 		token = content
 	}
 
-	if token[len(token)-1] == '\n' {
-		token = token[:len(token)-1]
-	}
-
-	return token
+	return strings.ReplaceAll(token, "\n", "")
 }
