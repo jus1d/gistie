@@ -13,6 +13,7 @@ func main() {
 	if len(os.Args) < 2 {
 		fmt.Printf("Usage: gistie <path-to-file> <description | optional>\n")
 		fmt.Printf("ERROR: No path provided\n")
+		return
 	}
 
 	path := os.Args[1]
