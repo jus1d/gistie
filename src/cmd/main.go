@@ -6,17 +6,23 @@ import (
 	"gistie/src/internal/file"
 	"gistie/src/internal/gist"
 	"os"
+	"strings"
 )
 
 func main() {
-	if len(os.Args) != 2 {
-		fmt.Printf("Usage: gister ./main.go\n")
+	if len(os.Args) < 2 {
+		fmt.Printf("Usage: gistie <path-to-file> <description | optional>\n")
 		fmt.Printf("ERROR: No path provided\n")
 	}
 
 	path := os.Args[1]
 	if !file.Exists(path) {
 		fmt.Printf("ERROR: File '%s' doesn't exists\n", path)
+	}
+
+	description := ""
+	if len(os.Args) > 2 {
+		description = strings.Join(os.Args[2:], " ")
 	}
 
 	filename, content, err := file.Read(path)
@@ -26,7 +32,7 @@ func main() {
 
 	token := config.GetToken()
 
-	url, err := gist.Create(token, filename, "", content)
+	url, err := gist.Create(token, filename, description, content)
 	if err != nil {
 		fmt.Printf("ERROR: Can't create a Gist: %s\n", err.Error())
 	}

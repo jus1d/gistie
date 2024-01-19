@@ -1,5 +1,6 @@
 # Ignore binary files
 .bin/*
+gistie*
 
 # Ignore IDE files, folders
 .idea
