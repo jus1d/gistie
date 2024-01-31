@@ -6,5 +6,9 @@ Simple tool for fast creation of Gists.
 
 ```console
 $ go build -o gistie ./src/cmd/main.go
-$ ./gistie <path-to-file> <description | optional>
+...
+... build logs ...
+...
+
+$ ./gistie [path] [description, optional]
 ```
